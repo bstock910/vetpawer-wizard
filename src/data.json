@@ -1,0 +1,32 @@
+{
+  "account": {
+    "id": 1000,
+    "market": "vet",
+    "name": "The Veterinary Demo Clinic",
+    "smsName": "Veterinary Demo Clinic",
+    "notificationEmail": "brian@appointmaster.com",
+    "phone": 7037576620,
+    "software": 10,
+    "address": {
+      "line1": "12346 Street",
+      "line2": null,
+      "city": "Reston",
+      "state": "VA",
+      "postCode": 20190,
+      "timeZone": 0
+    },
+    "socialMedia": {
+      "website": "https://vetpawer.com",
+      "facebook": "https://vetpawer.com",
+      "twitter": "https://vetpawer.com",
+      "instagram": "https://vetpawer.com",
+      "googlePlus": "https://vetpawer.com",
+      "yelp": "https://vetpawer.com",
+      "yelpId": "abcdef",
+      "googleId": "abcdef"
+    },
+    "users": {
+
+    }
+  }
+}

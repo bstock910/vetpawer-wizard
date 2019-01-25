@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700');
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #F1FBFF;
+}
+.main-body {
+  min-height: calc(100vh - 220px);
+}
+
+
+.spacer {
+  margin: 20px;
+}
+
+.nav-button {
+  margin: 0 5px;
+  border: 0;
+}
+
+$info: #367EAC;
+$button-border-color: #F1FBFF;
+$button-background-color: #F1FBFF;
+
+@import "~bulma/bulma";
