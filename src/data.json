@@ -1,32 +1,120 @@
 {
   "account": {
-    "id": 1000,
+    "id": 105,
     "market": "vet",
-    "name": "The Veterinary Demo Clinic",
-    "smsName": "Veterinary Demo Clinic",
+    "name": "Knapp Veterinary Hospital",
+    "smsName": "Knapp Vet",
     "notificationEmail": "brian@appointmaster.com",
-    "phone": 7037576620,
+    "phone": 6142673124,
     "software": 10,
     "address": {
-      "line1": "12346 Street",
+      "line1": "596 Oakland Park Ave.",
       "line2": null,
-      "city": "Reston",
-      "state": "VA",
-      "postCode": 20190,
+      "city": "Columbus",
+      "state": "OH",
+      "postCode": 43214,
       "timeZone": 0
     },
     "socialMedia": {
-      "website": "https://vetpawer.com",
-      "facebook": "https://vetpawer.com",
-      "twitter": "https://vetpawer.com",
-      "instagram": "https://vetpawer.com",
+      "website": "https://www.knappvet.com/",
+      "facebook": "https://www.facebook.com/KnappVeterinaryHospital?fref=ts",
+      "twitter": null,
+      "instagram": null,
       "googlePlus": "https://vetpawer.com",
       "yelp": "https://vetpawer.com",
       "yelpId": "abcdef",
       "googleId": "abcdef"
     },
     "users": {
-
+      "officeManager": {
+        "name": "Tammy",
+        "email": null,
+        "userId": null,
+        "passwordSet": true
+      },
+      "accountant": {
+        "name": "Tammy",
+        "email": null,
+        "userId": null,
+        "passwordSet": true
+      },
+      "providers": [
+        {
+          "name": "Dr. Robert Knapp",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. J. Curt Munsell",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. Lori Schiefer",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. Karen Heinzerling",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. Brenda Evans",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. Lisa Craven",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        },
+        {
+          "name": "Dr. Joey Abbruzzese",
+          "email": null,
+          "providerId": null,
+          "userId": null,
+          "passwordSet": true
+        }
+      ],
+      "frontOffice": [
+        {
+          "name": "Natalie",
+          "email": null,
+          "userId": null,
+          "passwordSet": false
+        },
+        {
+          "name": "Anne",
+          "email": null,
+          "userId": null,
+          "passwordSet": false
+        },
+        {
+          "name": "Chelsea",
+          "email": null,
+          "userId": null,
+          "passwordSet": false
+        },
+        {
+          "name": "Logan",
+          "email": null,
+          "userId": null,
+          "passwordSet": false
+        }
+      ]
     }
   }
 }

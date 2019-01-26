@@ -7,7 +7,7 @@
         </div>
         <div class="field-body">
           <div class="field">
-            <div class="control"><input type="text" class="input" name="name" v-model="account.name" /></div>
+            <div class="control"><input type="text" class="input" id="name" v-model="account.name" /></div>
             <p class="help">The name that will show on all emails sent and all online pages</p>
           </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="text" name="address1" class="input" v-model="account.address.line1">
+              <input type="text" name="address1" id="address1" class="input" v-model="account.address.line1" placeholder="Address Line 1">
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="text" name="address2" class="input" v-model="account.address.line2" placeholder="Line 2">
+              <input type="text" name="address2" class="input" v-model="account.address.line2" placeholder="Address Line 2">
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="text" class="input" v-model="account.address.city">
+              <input type="text" class="input" id="city" v-model="account.address.city" placeholder="City">
             </div>
           </div>
         </div>
@@ -60,9 +60,9 @@
         <div class="field-label"><label for="state" class="label">State</label></div>
         <div class="field-body">
           <div class="field">
-            <div class="control"><input type="text" class="input" v-model="account.address.state"></div></div>
-          <div class="field-label is-normal"><label for="state" class="label">ZIP</label></div>
-          <div class="field-body"><div class="control"><input type="text" class="input" v-model="account.address.postCode"></div></div>
+            <div class="control"><input type="text" class="input" id="state" v-model="account.address.state" placeholder="State"></div></div>
+          <div class="field-label is-normal"><label for="zip" class="label">ZIP</label></div>
+          <div class="field-body"><div class="control"><input type="text" class="input" id="zip" placeholder="ZIP" v-model="account.address.postCode"></div></div>
         </div>
       </div>
       <hr>
@@ -74,9 +74,9 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="text" class="input" v-model="account.notificationEmail">
+              <input type="text" id="email" class="input" v-model="account.notificationEmail" placeholder="Notification Email">
             </div>
-            <p class="help">The address where you will receive all AppointMaster notifications, standard reports, and any client email replies.</p>
+            <p class="help">The address where you will receive all Vet Pawer notifications, standard reports, and any client email replies.</p>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
         <div class="field-body">
           <div class="field">
             <div class="control">
-              <input type="text" class="input" v-model="account.phone">
+              <input type="text" id="phone" class="input" v-model="account.phone" placeholder="Phone Number">
             </div>
             <p class="help">The phone number that will display on all outbound communications, as well as the caller ID of any outbound calls placed.</p>
           </div>

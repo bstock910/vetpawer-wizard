@@ -91,9 +91,13 @@ export default {
           twitter: null,
           instagram: null,
           googlePlus: null,
-          yelp: null,
-          yelpId: null,
-          googleId: null
+          yelp: null
+        },
+        users: {
+          officeManager: {},
+          accountant: {},
+          providers: [],
+          frontOffice: []
         }
       }
     }
