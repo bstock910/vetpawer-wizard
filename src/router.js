@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import PageHome from '@/pages/PageHome'
+import PageNotFound from '@/pages/PageNotFound'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/account',
       name: 'account',
       component: loadPage('Account')
+    },
+    {
+      path: '*',
+      name: 'notFound',
+      component: PageNotFound
     }
   ]
 })
