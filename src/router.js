@@ -24,6 +24,11 @@ export default new Router({
       component: loadPage('Account')
     },
     {
+      path: '/scheduling',
+      name: 'scheduling',
+      component: loadPage('Scheduling')
+    },
+    {
       path: '*',
       name: 'notFound',
       component: PageNotFound

@@ -46,7 +46,7 @@
       </div>
       <hr>
       <h5 class="subtitle is-5 has-text-centered">Providers</h5>
-      <div v-for="(provider,index) in users.providers" :key="index">
+      <div v-for="(provider,index) in users.providers" :key="'provider' + index" class="field">
         <div class="field is-horizontal">
           <div class="field-label is-normal">
             <label for="managerName" class="label">Name</label>
@@ -67,10 +67,13 @@
             </div>
           </div>
         </div>
+        <div v-if="index !== (users.providers.length - 1)">
+          <hr>
+        </div>
       </div>
       <hr>
       <h5 class="subtitle is-5 has-text-centered">Office Staff</h5>
-      <div v-for="(staff, index) in users.frontOffice" :key="index" class="field">
+      <div v-for="(staff, index) in users.frontOffice" :key="'staff' + index" class="field">
         <div class="field is-horizontal">
           <div class="field-label is-normal">
             <label for="managerName" class="label">Name</label>
@@ -91,7 +94,7 @@
             </div>
           </div>
         </div>
-        <div v-if="!isLast(staff[index])">
+        <div v-if="index !== (users.frontOffice.length - 1)">
           <hr>
         </div>
       </div>
