@@ -13,7 +13,8 @@
       <keep-alive>
         <component
           ref="currentStep"
-          :is="currentStep">
+          :is="currentStep"
+        :wizard-data="scheduling">
         </component>
       </keep-alive>
     </section>
@@ -71,7 +72,15 @@ export default {
         'Reason Setup',
         'Additional Settings',
         'Summary'
-      ]
+      ],
+      scheduling: {
+        scheduleByProvider: null,
+        unitsPerHour: null,
+        columnsUsed: [],
+        providersUsed: [],
+        reasonsHierarchy: [],
+        officeHours: []
+      }
     }
   },
   computed: {
@@ -102,6 +111,10 @@ export default {
         this.canGoNext = true
       })
     }
+  },
+  created () {
+    this.$store.dispatch('getScheduleOptions')
+      .then(this.scheduling = this.$store.scheduleOptions)
   }
 }
 </script>

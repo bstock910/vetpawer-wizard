@@ -132,7 +132,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getData')
+    this.$store.dispatch('getAccountData')
       .then(this.account = this.$store.accountData)
   }
 }

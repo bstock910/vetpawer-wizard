@@ -2,6 +2,7 @@
   "account": {
     "id": 105,
     "market": "vet",
+    "isMultiOffice": false,
     "name": "Knapp Veterinary Hospital",
     "smsName": "Knapp Vet",
     "notificationEmail": "brian@appointmaster.com",
@@ -116,5 +117,79 @@
         }
       ]
     }
+  },
+  "data": {
+    "offices": [],
+    "columns": [],
+    "providers": [],
+    "appointmentTypes": [],
+    "reminderCodes": []
+  },
+  "scheduleOptions": {
+    "scheduleByProvider": true,
+    "unitsPerHour": 4,
+    "columnsUsed": [],
+    "providersUsed": [],
+    "reasonsHierarchy": [],
+    "officeHours": [
+      {
+        "value": 0,
+        "label": "Monday",
+        "open": true,
+        "start": 540,
+        "end": 960
+      },
+      {
+        "value": 1,
+        "label": "Tuesday",
+        "open": true,
+        "start": 540,
+        "end": 960
+      },
+      {
+        "value": 2,
+        "label": "Wednesday",
+        "open": true,
+        "start": 540,
+        "end": 780
+      },
+      {
+        "value": 3,
+        "label": "Thursday",
+        "open": true,
+        "start": 540,
+        "end": 960
+      },
+      {
+        "value": 4,
+        "label": "Friday",
+        "open": true,
+        "start": 540,
+        "end": 900
+      },
+      {
+        "value": 5,
+        "label": "Saturday",
+        "open": false,
+        "start": 540,
+        "end": 900
+      },
+      {
+        "value": 6,
+        "label": "Sunday",
+        "open": false,
+        "start": 540,
+        "end": 900
+      }
+    ]
+  },
+  "reminderPlanOptions": {
+    "emailUsed": true,
+    "emailDelay": 3,
+    "smsUsed": true,
+    "smsDelay": 2,
+    "phoneUsed": true,
+    "phoneDelay": 1,
+    "useSmsReminder3":false
   }
 }

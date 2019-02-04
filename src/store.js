@@ -5,15 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    accountData: {}
+    accountData: {},
+    scheduleOptions: {}
   },
   mutations: {
 
   },
   actions: {
-    getData () {
+    getAccountData () {
       this.accountData = data.account
       return this.accountData
+    },
+    getScheduleOptions () {
+      this.scheduleOptions = data.scheduleOptions
+      return this.scheduleOptions
     }
   }
 })
