@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700');
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif !important;
   background-color: #F1FBFF;
 }
 .main-body {
@@ -15,11 +15,37 @@ body {
 
 .nav-button {
   margin: 0 5px;
+}
+
+.button, .button :focus, .button.is-focused {
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+.select.is-info select {
   border: 0;
 }
 
 $info: #367EAC;
 $button-border-color: #F1FBFF;
 $button-background-color: #F1FBFF;
+$button-focus-border-color: #F1FBFF;
+$button-active-border-color: #F1FBFF;
+$button-text-hover-background-color: #F1FBFF;
+$button-focus-box-shadow-color: #F1FBFF;
+
+$divider-color: #196A9F;
+.is-divider {
+  margin: 0.75rem 0 !important;
+  border-top-color: #196A9F !important;
+  opacity: 0.5 !important;
+}
+$divider-thickness: .05rem;
+.is-divider {
+  width: 50%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 @import "~bulma/bulma";
+@import "~bulma-extensions/bulma-divider/dist/css/bulma-divider";

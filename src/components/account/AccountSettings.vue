@@ -24,7 +24,6 @@
           </div>
         </div>
       </div>-->
-      <hr>
       <h5 class="subtitle is-5 has-text-centered">Office Address</h5>
       <div class="field is-horizontal">
         <div class="field-label is-normal"><label for="address1" class="label">Address</label></div>
@@ -65,7 +64,6 @@
           <div class="field-body"><div class="control"><input type="text" class="input" id="zip" placeholder="ZIP" v-model="account.address.postCode"></div></div>
         </div>
       </div>
-      <hr>
       <h5 class="subtitle is-5 has-text-centered">Contact Information</h5>
       <div class="field is-horizontal">
         <div class="field-label is-normal">

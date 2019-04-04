@@ -144,7 +144,7 @@
         "label": "Tuesday",
         "open": true,
         "start": 540,
-        "end": 960
+        "end": 1020
       },
       {
         "value": 2,
@@ -158,13 +158,13 @@
         "label": "Thursday",
         "open": true,
         "start": 540,
-        "end": 960
+        "end": 1020
       },
       {
         "value": 4,
         "label": "Friday",
         "open": true,
-        "start": 540,
+        "start": 600,
         "end": 900
       },
       {
