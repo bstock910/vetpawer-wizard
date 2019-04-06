@@ -74,8 +74,11 @@ export default {
         'Summary'
       ],
       scheduling: {
+        software: null,
         scheduleByProvider: null,
         unitsPerHour: null,
+        columns: [],
+        providers: [],
         columnsUsed: [],
         providersUsed: [],
         reasonsHierarchy: [],
@@ -113,8 +116,8 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getScheduleOptions')
-      .then(this.scheduling = this.$store.scheduleOptions)
+    this.$store.dispatch('getWizardData')
+      .then(this.scheduling = this.$store.wizardData)
   }
 }
 </script>

@@ -53,8 +53,8 @@ export default {
   data () {
     return {
       scheduleOptions: {
-        unitsPerHour: this.wizardData.unitsPerHour,
-        officeHours: this.wizardData.officeHours
+        unitsPerHour: this.wizardData.scheduleOptions.unitsPerHour,
+        officeHours: this.wizardData.scheduleOptions.officeHours
       }
     }
   }

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
   background-color: #F1FBFF;
 }
 .main-body {
@@ -20,6 +20,7 @@ body {
 .button, .button :focus, .button.is-focused {
   border: 0 !important;
   outline: 0 !important;
+  font-family: 'Raleway', sans-serif !important;
 }
 
 .select.is-info select {

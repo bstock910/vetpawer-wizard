@@ -7,7 +7,7 @@
     "smsName": "Knapp Vet",
     "notificationEmail": "brian@appointmaster.com",
     "phone": 6142673124,
-    "software": 10,
+    "software": "AVIMark",
     "address": {
       "line1": "596 Oakland Park Ave.",
       "line2": null,
@@ -118,10 +118,37 @@
       ]
     }
   },
-  "data": {
+  "pimsData": {
     "offices": [],
     "columns": [],
-    "providers": [],
+    "providers": [
+      {
+        "id": "RB",
+        "name": "RUSSELL BOWLING, VMD",
+        "appointments": 20
+      },
+      {
+        "id": "CJJ",
+        "name": "CHARLES J. JEFFRIES, DVM",
+        "appointments": 24
+      },
+      {
+        "id": "EVV",
+        "name": "ELIZABETH V. VANDERGRIFF, DVM",
+        "appointments": 12
+      },
+      {
+        "id": "RKB",
+        "name": "ROSALIE K. BOYSEN",
+        "appointments": 4
+      },
+      {
+        "id": "RV",
+        "name": "RELIEF VET",
+        "appointments": 0
+      }
+
+    ],
     "appointmentTypes": [],
     "reminderCodes": []
   },
