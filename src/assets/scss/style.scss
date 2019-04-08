@@ -15,6 +15,7 @@ body {
 
 .nav-button {
   margin: 0 5px;
+  text-transform: uppercase;
 }
 
 .button, .button :focus, .button.is-focused {
@@ -48,5 +49,41 @@ $divider-thickness: .05rem;
   margin-right: auto !important;
 }
 
+.slide-in-enter-active {
+  transition: all 1s ease;
+}
+
+.slide-in-enter
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.tooltip {
+  // ...
+
+  &.tooltip-info {
+    $color: rgba(#004499, .9);
+
+    .tooltip-inner {
+      background: $color;
+      color: white;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+      max-width: 250px;
+    }
+
+    .tooltip-arrow {
+      border-color: $color;
+    }
+  }
+}
+
+section {
+  padding-top: 1em !important;
+}
+
 @import "~bulma/bulma";
 @import "~bulma-extensions/bulma-divider/dist/css/bulma-divider";
+/*@import "~vue2-animate/src/sass/vue2-animate";*/

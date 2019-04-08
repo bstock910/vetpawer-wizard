@@ -11,11 +11,13 @@
     </nav>
     <section class="section">
       <keep-alive>
-        <component
-          ref="currentStep"
-          :is="currentStep"
-        :wizard-data="scheduling">
-        </component>
+        <transition name="slide-in">
+          <component
+            ref="currentStep"
+            :is="currentStep"
+            :wizard-data="scheduling">
+          </component>
+        </transition>
       </keep-alive>
     </section>
     <div class="buttons is-right">
