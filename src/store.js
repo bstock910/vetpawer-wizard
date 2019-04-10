@@ -5,15 +5,26 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    wizardData: {}
+    accountData: {},
+    pimsData: {},
+    scheduleOptions: {},
+    reminderPlanOptions: {}
   },
   mutations: {
 
   },
   actions: {
-    getWizardData () {
-      this.wizardData = data
-      return this.wizardData
+    getAccountData () {
+      this.accountData = data.account
+      return this.accountData
+    },
+    getPimsData () {
+      this.pimsData = data.pimsData
+      return this.pimsData
+    },
+    getScheduleOptions () {
+      this.scheduleOptions = data.scheduleOptions
+      return this.scheduleOptions
     }
   }
 })

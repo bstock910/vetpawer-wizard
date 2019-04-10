@@ -11,7 +11,7 @@
               <div class="column is-3">To</div>
             </div>
           </div>
-          <div v-for="day in scheduleOptions.officeHours" :key="day.value">
+          <div v-for="day in officeHours" :key="day.value">
             <div class="columns">
               <div class="column is-3">
                 {{day.label}}
@@ -31,7 +31,7 @@
           </div>
           <div class="spacer"></div>
           <div>
-            <p>VetPawer has detected that your schedule is managed by <span class="has-text-weight-semibold">{{ (60 / scheduleOptions.unitsPerHour) }}</span>  minute intervals.</p>
+            <p>VetPawer has detected that your schedule is managed by <span class="has-text-weight-semibold">{{ (60 / unitsPerHour) }}</span>  minute intervals.</p>
           </div>
     </form>
   </div>
@@ -45,17 +45,23 @@ export default {
     HoursSelection
   },
   props: {
-    wizardData: {
+    accountData: {
+      type: Object,
+      required: true
+    },
+    pimsData: {
+      type: Object,
+      required: true
+    },
+    scheduleOptions: {
       type: Object,
       required: true
     }
   },
   data () {
     return {
-      scheduleOptions: {
-        unitsPerHour: this.wizardData.scheduleOptions.unitsPerHour,
-        officeHours: this.wizardData.scheduleOptions.officeHours
-      }
+      unitsPerHour: this.pimsData.unitsPerHour,
+      officeHours: this.scheduleOptions.officeHours
     }
   }
 }

@@ -15,7 +15,9 @@
           <component
             ref="currentStep"
             :is="currentStep"
-            :wizard-data="scheduling">
+            :account-data="account"
+          :pims-data="pimsData"
+          :schedule-options="scheduleOptions">
           </component>
         </transition>
       </keep-alive>
@@ -75,12 +77,16 @@ export default {
         'Additional Settings',
         'Summary'
       ],
-      scheduling: {
-        software: null,
-        scheduleByProvider: null,
-        unitsPerHour: null,
+      account: {
+        software: null
+      },
+      pimsData: {
         columns: [],
         providers: [],
+        unitsPerHour: null
+      },
+      scheduleOptions: {
+        scheduleByProvider: null,
         columnsUsed: [],
         providersUsed: [],
         reasonsHierarchy: [],
@@ -118,8 +124,15 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getWizardData')
-      .then(this.scheduling = this.$store.wizardData)
+    this.$store
+      .dispatch('getAccountData')
+      .then((this.account = this.$store.accountData))
+    this.$store
+      .dispatch('getPimsData')
+      .then((this.pimsData = this.$store.pimsData))
+    this.$store
+      .dispatch('getScheduleOptions')
+      .then((this.scheduleOptions = this.$store.scheduleOptions))
   }
 }
 </script>

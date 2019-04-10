@@ -119,6 +119,7 @@
     }
   },
   "pimsData": {
+    "unitsPerHour": 4,
     "offices": [],
     "columns": [
       {
@@ -209,7 +210,6 @@
   },
   "scheduleOptions": {
     "scheduleByProvider": true,
-    "unitsPerHour": 4,
     "columnsUsed": [],
     "providersUsed": [],
     "reasonsHierarchy": [],
