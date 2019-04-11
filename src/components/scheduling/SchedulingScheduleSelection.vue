@@ -31,9 +31,11 @@
         <div class="columns is-multiline">
           <div v-for="provider in sortedProviders" :key="provider.id" class="column is-4">
             <input type="checkbox" class="checkbox" :value="provider" v-model="providersUsed">
-            {{provider.name}} <span class="is-small">({{provider.id}})</span><br>
-            <div class="is-small has-text-centered">{{provider.totalAppointments}} appointments</div>
-            <button class="button" @click.prevent="openSpecificHoursForResource(scheduleByProvider,provider.id)">Open Hours</button>
+            {{provider.name}} <span class="is-size-6">({{provider.id}})</span>
+            <div class="is-size-7">{{provider.totalAppointments}} appointments</div>
+            <button class="button is-dark is-small is-rounded"
+                    @click.prevent="openSpecificHoursForResource(scheduleByProvider,provider.id)"
+                    :disabled="!isDisabled(scheduleByProvider,provider.id)">Open Hours</button>
           </div>
         </div>
       </div>
@@ -42,9 +44,11 @@
         <div class="columns is-multiline">
           <div v-for="column in sortedColumns" :key="column.id" class="column is-4">
             <input type="checkbox" class="checkbox" :value="column" v-model="columnsUsed">
-            {{column.name}} <span class="is-small">({{column.id}})</span><br>
-            <div class="is-small has-text-centered">{{column.totalAppointments}} appointments</div>
-            <button class="button" @click.prevent="openSpecificHoursForResource(scheduleByProvider,column.id)">Open Hours</button>
+            {{column.name}} <span class="is-size-6">({{column.id}})</span>
+            <div class="is-size-7">{{column.totalAppointments}} appointments</div>
+            <button class="button is-dark is-small is-rounded"
+                    @click.prevent="openSpecificHoursForResource(scheduleByProvider,column.id)"
+                    :disabled="!isDisabled(scheduleByProvider,column.id)">Open Hours</button>
           </div>
         </div>
       </div>
@@ -107,9 +111,24 @@ export default {
           width: '50%',
           minWidth: 500,
           scrollable: true,
-          clickToClose: false
+          clickToClose: true
         }
       )
+    },
+    isDisabled: function (byProvider, id) {
+      if (byProvider) {
+        if (this.providersUsed.filter(function(e) {
+          return e.id === id
+        }).length > 0) {
+          return true
+        }
+      } else {
+        if (this.columnsUsed.filter(function(e) {
+          return e.id === id
+        }).length > 0) {
+          return true
+        }
+      }
     }
   }
 }
