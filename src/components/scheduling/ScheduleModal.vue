@@ -1,9 +1,9 @@
 <template>
-  <div class="modal">
-    {{isProvider}}
-    <br>
-    {{resourceId}}
-    <HoursSelection></HoursSelection>
+  <div>
+        <h2>{{isProvider}}</h2>
+        <br>
+        <h2>{{selectedProvider}}</h2>
+        <HoursSelection></HoursSelection>
   </div>
 </template>
 
@@ -33,7 +33,32 @@ export default {
   data () {
     return {
       isProvider: this.byProvider,
-      resourceId: this.id
+      resourceId: this.id,
+      selectedProvider: {},
+      selectedColumn: {},
+      pimsData: {
+        columns: [],
+        providers: []
+      }
+    }
+  },
+  created () {
+    this.$store
+      .dispatch('getPimsData')
+      .then(this.pimsData.columns = this.$store.pimsData.columns)
+      .then(this.pimsData.providers = this.$store.pimsData.providers)
+    if (this.isProvider) {
+      for (let i = 0; i < this.pimsData.providers.length; i++) {
+        if (this.pimsData.providers[i].id === this.resourceId) {
+          this.selectedProvider = this.pimsData.providers[i]
+        }
+      }
+    } else {
+      for (let i = 0; i < this.pimsData.columns.length; i++) {
+        if (this.pimsData.columns[i].id === this.resourceId) {
+          this.selectedColumn = this.pimsData.columns[i]
+        }
+      }
     }
   }
 }

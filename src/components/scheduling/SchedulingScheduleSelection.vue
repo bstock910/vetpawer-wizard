@@ -94,12 +94,22 @@ export default {
   },
   methods: {
     openSpecificHoursForResource (byProvider, id) {
-      console.log(byProvider)
-      console.log(id)
-      this.$modal.show(ScheduleModal, {
-        byProvider: byProvider,
-        id: id
-      })
+      this.$modal.show(
+        ScheduleModal,
+        {
+          byProvider: byProvider,
+          id: id
+        },
+        {
+          adaptive: true,
+          height: 'auto',
+          minHeight: 800,
+          width: '50%',
+          minWidth: 500,
+          scrollable: true,
+          clickToClose: false
+        }
+      )
     }
   }
 }
