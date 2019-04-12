@@ -3,7 +3,7 @@
     <transition name="modal">
       <section>
         <form>
-          <h5 class="subtitle is-5 has-text-centered">Open Hours for <strong>{{scheduleResource.name}} </strong> <small> ({{selectedResource.id}})</small></h5>
+          <h5 class="subtitle is-5 has-text-centered">Open Hours for <strong>{{scheduleResource.name}} </strong> <small> ({{scheduleResource.id}})</small></h5>
           <div class="is-divider"></div>
           <div class="level">
             <label class="radio">
@@ -15,8 +15,8 @@
               <input type="radio" id="false" v-model="scheduleResource.useDefaultHours" :value="false"> Set specific open hours
             </label>
           </div>
-          {{selectedResource}}
-          <div v-if="!selectedResource.useDefaultHours">
+          {{scheduleResource}}
+          <div v-if="!scheduleResource.useDefaultHours">
             <div>
               <div class="columns has-text-weight-semibold has-text-info has-text-centered"><div class="column is-3">Day</div>
                 <div class="column is-2">Open</div>
