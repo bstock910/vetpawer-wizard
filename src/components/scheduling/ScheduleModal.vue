@@ -1,19 +1,21 @@
 <template>
   <div>
-    <section>
+    <transition name="modal">
+      <section>
         <form>
-          <h5 class="subtitle is-5 has-text-centered">Open Hours for <strong>{{selectedResource.name}} </strong> <small> ({{selectedResource.id}})</small></h5>
+          <h5 class="subtitle is-5 has-text-centered">Open Hours for <strong>{{scheduleResource.name}} </strong> <small> ({{selectedResource.id}})</small></h5>
           <div class="is-divider"></div>
           <div class="level">
             <label class="radio">
-              <input type="radio" id="true" v-model="selectedResource.useDefaultHours" v-bind:value="true"> Use default office hours
+              <input type="radio" id="true" v-model="scheduleResource.useDefaultHours" :value="true"> Use default office hours
             </label>
           </div>
           <div class="level">
             <label class="radio">
-              <input type="radio" id="false" v-model="selectedResource.useDefaultHours" v-bind:value="false"> Set specific open hours
+              <input type="radio" id="false" v-model="scheduleResource.useDefaultHours" :value="false"> Set specific open hours
             </label>
           </div>
+          {{selectedResource}}
           <div v-if="!selectedResource.useDefaultHours">
             <div>
               <div class="columns has-text-weight-semibold has-text-info has-text-centered"><div class="column is-3">Day</div>
@@ -43,7 +45,8 @@
           </div>
           <div class="spacer"></div>
         </form>
-    </section>
+      </section>
+    </transition>
   </div>
 </template>
 
@@ -55,58 +58,22 @@ export default {
     HoursSelection
   },
   props: {
-    byProvider: {
-      type: Boolean,
+    resource: {
+      type: Object,
       required: true
-    },
-    id: {
-      type: String,
-      required: true
-    },
-    useDefault: {
-      type: Boolean
-    },
-    specificHours: {
-      type: Object
     }
   },
-  data() {
+  data () {
     return {
-      isProvider: this.byProvider,
-      resourceId: this.id,
-      selectedResource: {},
-      pimsData: {
-        columns: [],
-        providers: []
-      },
-      officeHours: {}
+      scheduleResource: this.resource
     }
   },
   created () {
-    this.$store
-      .dispatch('getScheduleOptions')
-      .then((this.officeHours = this.$store.scheduleOptions.officeHours))
-    this.$store
-      .dispatch('getPimsData')
-      .then((this.pimsData.columns = this.$store.pimsData.columns))
-      .then((this.pimsData.providers = this.$store.pimsData.providers))
-    if (this.isProvider) {
-      for (let i = 0; i < this.pimsData.providers.length; i++) {
-        if (this.pimsData.providers[i].id === this.resourceId) {
-          this.selectedResource = this.pimsData.providers[i]
-        }
-      }
-    } else {
-      for (let i = 0; i < this.pimsData.columns.length; i++) {
-        if (this.pimsData.columns[i].id === this.resourceId) {
-          this.selectedResource = this.pimsData.columns[i]
-        }
-      }
+  },
+  methods: {
+    close () {
+      this.$emit('close')
     }
-    this.selectedResource.useDefaultHours =
-      'useDefaultHours' in this.selectedResource
-        ? this.selectedResource.useDefaultHours
-        : true
   }
 }
 </script>

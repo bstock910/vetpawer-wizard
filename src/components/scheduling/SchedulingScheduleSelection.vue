@@ -7,7 +7,7 @@
         <p class="subtitle has-text-centered is-medium">How do you manage your appointment calendar?</p>
         <div class="level">
           <label class="radio">
-            <input type="radio" id="true" v-model="scheduleByProvider" v-bind:value="true"> By provider <button v-tooltip="{
+            <input type="radio" id="true" v-model="scheduleByProvider" :value="true"> By provider <button v-tooltip="{
   content: 'Choose this option if the schedule is managed by doctor or provider (John Smith DVM, Jane Doe DVM, Technician, etc.)',
   placement: 'right-end',
   classes: ['tooltip-info'],
@@ -17,7 +17,7 @@
         </div>
         <div class="level">
           <label class="radio">
-            <input type="radio" id="false" v-model="scheduleByProvider" v-bind:value="false"> By room <button v-tooltip="{
+            <input type="radio" id="false" v-model="scheduleByProvider" :value="false"> By room <button v-tooltip="{
   content: 'Choose this option if the schedule is managed by room (Exam Room 1, Grooming, Surgery, etc.)',
   placement: 'right-start',
   classes: ['tooltip-info'],
@@ -34,7 +34,7 @@
             {{provider.name}} <span class="is-size-6">({{provider.id}})</span>
             <div class="is-size-7">{{provider.totalAppointments}} appointments</div>
             <button class="button is-dark is-small is-rounded"
-                    @click.prevent="openSpecificHoursForResource(scheduleByProvider,provider.id)"
+                    @click.prevent="showModal(provider)"
                     :disabled="!isDisabled(scheduleByProvider,provider.id)">Open Hours</button>
           </div>
         </div>
@@ -47,18 +47,26 @@
             {{column.name}} <span class="is-size-6">({{column.id}})</span>
             <div class="is-size-7">{{column.totalAppointments}} appointments</div>
             <button class="button is-dark is-small is-rounded"
-                    @click.prevent="openSpecificHoursForResource(scheduleByProvider,column.id)"
+                    @click.prevent="showModal(column)"
                     :disabled="!isDisabled(scheduleByProvider,column.id)">Open Hours</button>
           </div>
         </div>
       </div>
     </form>
+    <ScheduleModal
+      v-show="isModalVisible"
+      @close="closeModal"
+      :resource="selectedResource"
+      ></ScheduleModal>
   </div>
 </template>
 
 <script>
 import ScheduleModal from '@/components/scheduling/ScheduleModal'
 export default {
+  components: {
+    ScheduleModal
+  },
   props: {
     accountData: {
       type: Object,
@@ -81,7 +89,9 @@ export default {
       columnsUsed: this.scheduleOptions.columnsUsed,
       providersUsed: this.scheduleOptions.providersUsed,
       pimsColumns: this.pimsData.columns,
-      pimsProviders: this.pimsData.providers
+      pimsProviders: this.pimsData.providers,
+      isModalVisible: false,
+      selectedResource: {}
     }
   },
   computed: {
@@ -97,38 +107,32 @@ export default {
     }
   },
   methods: {
-    openSpecificHoursForResource (byProvider, id) {
-      this.$modal.show(
-        ScheduleModal,
-        {
-          byProvider: byProvider,
-          id: id
-        },
-        {
-          adaptive: true,
-          height: 'auto',
-          minHeight: 800,
-          width: '50%',
-          minWidth: 500,
-          scrollable: true,
-          clickToClose: true
-        }
-      )
-    },
     isDisabled: function (byProvider, id) {
       if (byProvider) {
-        if (this.providersUsed.filter(function(e) {
-          return e.id === id
-        }).length > 0) {
+        if (
+          this.providersUsed.filter(function (e) {
+            return e.id === id
+          }).length > 0
+        ) {
           return true
         }
       } else {
-        if (this.columnsUsed.filter(function(e) {
-          return e.id === id
-        }).length > 0) {
+        if (
+          this.columnsUsed.filter(function (e) {
+            return e.id === id
+          }).length > 0
+        ) {
           return true
         }
       }
+    },
+    showModal (resource) {
+      this.isModalVisible = true
+      this.selectedResource = resource
+      console.log(this.selectedResource)
+    },
+    closeModal () {
+      this.isModalVisible = false
     }
   }
 }
